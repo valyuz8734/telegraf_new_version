@@ -29,7 +29,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" && \
     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
 
 EXPOSE 8125/udp 8092/udp 8094
-RUN ["chmod", "+x", 'entrypoint.sh']
+#RUN ["chmod", "+x", 'entrypoint.sh']
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["telegraf"]
